@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
-public class TableViewController implements Initializable{
+public class TabController implements Initializable{
 
 	
     @FXML

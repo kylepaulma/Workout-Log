@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TabController">
   <tabs>
     <Tab text="Calendar">
       <content>
@@ -14,7 +15,45 @@
     </Tab>
     <Tab text="Log">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane layoutX="186.0" layoutY="106.0" prefHeight="400.0" prefWidth="572.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colDate" onEditCommit="#changeDateCol" prefWidth="75.0" text="Date" />
+                            <TableColumn fx:id="colWorkout" onEditCommit="#changenameCol" prefWidth="75.0" text="Workout" />
+                              <TableColumn fx:id="colTime" onEditCommit="#changeTimeCol" prefWidth="75.0" text="Time" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <Label text="Workout Log" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </top>
+                     <bottom>
+                        <VBox prefHeight="67.0" prefWidth="572.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="dateTextField" promptText="Date" />
+                                    <TextField fx:id="workoutTextField" promptText="Workout Name" />
+                                    <TextField fx:id="timeTextField" promptText="Time" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="addButton" mnemonicParsing="false" onAction="#addWorkout" text="Add Workout" />
+                                    <Button fx:id="delButton" mnemonicParsing="false" onAction="#delWorkout" text="Delete Workout" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </bottom></BorderPane>
+               </children></AnchorPane>
       </content>
     </Tab>
       <Tab text="Settings">
