@@ -6,13 +6,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.titleController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.titleController">
    <children>
-      <Label layoutX="205.0" layoutY="106.0" text="Daily Fitness">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Button layoutX="245.0" layoutY="187.0" mnemonicParsing="false" onAction="#goToMain" text="Click to Continue" />
+      <VBox alignment="CENTER" prefHeight="402.0" prefWidth="528.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Daily Fitness">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToMain" text="Click to Continue" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

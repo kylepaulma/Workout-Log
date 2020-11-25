@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TableViewController">
+   <children>
+      <AnchorPane layoutY="-7.0" prefHeight="413.0" prefWidth="468.0">
+         <children>
+            <BorderPane layoutX="7.0" layoutY="7.0" prefHeight="37.0" prefWidth="143.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <Label alignment="CENTER" text="Workout Log" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="colDate" onEditCommit="#changeDateCol" prefWidth="75.0" text="Date" />
+                      <TableColumn fx:id="colWorkout" onEditCommit="#changenameCol" prefWidth="75.0" text="Workout" />
+                        <TableColumn fx:id="colTime" onEditCommit="#changeTimeCol" prefWidth="75.0" text="Time" />
+                    </columns>
+                  </TableView>
+               </center>
+               <bottom>
+                  <VBox prefHeight="84.0" prefWidth="468.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="60.0" prefWidth="468.0">
+                           <children>
+                              <TextField fx:id="dateTextField" promptText="Date" />
+                              <TextField fx:id="workoutTextField" promptText="Workout Name" />
+                              <TextField fx:id="timeTextField" promptText="Time" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="65.0" prefWidth="468.0">
+                           <children>
+                              <Button fx:id="addButton" mnemonicParsing="false" onAction="#addWorkout" text="Add Workout" />
+                              <Button fx:id="delButton" mnemonicParsing="false" onAction="#delWorkout" text="Delete Workout" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
