@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -8,11 +9,6 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TabController">
   <tabs>
-    <Tab text="Calendar">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-      </content>
-    </Tab>
     <Tab text="Log">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -24,6 +20,7 @@
                             <TableColumn fx:id="colDate" onEditCommit="#changeDateCol" prefWidth="75.0" text="Date" />
                             <TableColumn fx:id="colWorkout" onEditCommit="#changenameCol" prefWidth="75.0" text="Workout" />
                               <TableColumn fx:id="colTime" onEditCommit="#changeTimeCol" prefWidth="75.0" text="Time" />
+                              <TableColumn fx:id="colComment" onEditCommit="#changeCommentCol" prefWidth="341.0" text="Comments" />
                           </columns>
                         </TableView>
                      </center>
@@ -46,6 +43,7 @@
                               </HBox>
                               <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
+                                    <TextField fx:id="commentTextField" prefHeight="27.0" prefWidth="289.0" promptText="Comments (optional)" />
                                     <Button fx:id="addButton" mnemonicParsing="false" onAction="#addWorkout" text="Add Workout" />
                                     <Button fx:id="delButton" mnemonicParsing="false" onAction="#delWorkout" text="Delete Workout" />
                                  </children>
@@ -56,9 +54,21 @@
                </children></AnchorPane>
       </content>
     </Tab>
+    <Tab text="Calendar">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <DatePicker fx:id="datePicker" editable="false" layoutX="190.0" layoutY="82.0" onAction="#displayInfo" />
+                  <TextArea fx:id="calBox" layoutX="184.0" layoutY="200.0" prefHeight="98.0" prefWidth="200.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
       <Tab text="Settings">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ColorPicker layoutX="63.0" layoutY="55.0" />
+               </children></AnchorPane>
         </content>
       </Tab>
   </tabs>

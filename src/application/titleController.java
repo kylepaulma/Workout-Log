@@ -23,7 +23,6 @@ public class titleController {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
         window.setScene(scene);
         window.show();
-        System.out.print("hello");
 	}
 	
 }
